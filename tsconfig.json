@@ -13,21 +13,22 @@
       "@/*": ["*"],
       "@config/*": ["config/*"],
       "@routes/*": ["routes/*"],
+      "@validators/*": ["validators/*"],
       "@controllers/*": ["controllers/*"],
       "@services/*": ["services/*"],
       "@middlewares/*": ["middlewares/*"],
       "@utils/*": ["utils/*"],
-      "@types/*": ["types/*"],
       "@security/*": ["security/*"],
-      "@prisma/*": ["prisma/*"]
+      "@app-types/*": ["types/*"]
     },
+
+    "types": ["node"],
 
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-
-  "include": ["src/**/*"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts"],
   "exclude": ["node_modules"]
 }

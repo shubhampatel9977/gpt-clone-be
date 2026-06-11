@@ -40,3 +40,15 @@ src
 ├── app.ts
 └── server.ts
 
+
+
+Prisma -> 
+
+npx prisma generate
+
+npx prisma migrate dev --name init_auth
+
+npx prisma migrate status
+
+
+
