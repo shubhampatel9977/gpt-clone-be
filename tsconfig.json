@@ -18,7 +18,8 @@
       "@middlewares/*": ["middlewares/*"],
       "@utils/*": ["utils/*"],
       "@types/*": ["types/*"],
-      "@security/*": ["security/*"]
+      "@security/*": ["security/*"],
+      "@prisma/*": ["prisma/*"]
     },
 
     "strict": true,
