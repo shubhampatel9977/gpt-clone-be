@@ -7,10 +7,24 @@
     "rootDir": "./src",
     "outDir": "./dist",
 
+    "baseUrl": "./src",
+
+    "paths": {
+      "@/*": ["*"],
+      "@config/*": ["config/*"],
+      "@routes/*": ["routes/*"],
+      "@controllers/*": ["controllers/*"],
+      "@services/*": ["services/*"],
+      "@middlewares/*": ["middlewares/*"],
+      "@utils/*": ["utils/*"],
+      "@types/*": ["types/*"],
+      "@security/*": ["security/*"],
+      "@prisma/*": ["prisma/*"]
+    },
+
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-
     "forceConsistentCasingInFileNames": true
   },
 
