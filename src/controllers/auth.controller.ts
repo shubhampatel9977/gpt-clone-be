@@ -67,6 +67,7 @@ export const login = async (
     const {
       accessToken,
       refreshToken,
+      user,
     } = await loginUser(payload);
 
     setAccessTokenCookie(
@@ -82,7 +83,8 @@ export const login = async (
     return apiSuccess(
       res,
       200,
-      "Login successful"
+      "Login successful",
+      user,
     );
   } catch (error) {
     return apiError(
