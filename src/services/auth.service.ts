@@ -6,6 +6,7 @@ import {
   LoginInput,
   AuthTokens,
   JwtPayload,
+  LoginResponse,
 } from "@app-types/auth.types";
 
 import {
@@ -48,7 +49,7 @@ export const registerUser = async (
 
 export const loginUser = async (
   payload: LoginInput
-): Promise<AuthTokens> => {
+): Promise<LoginResponse> => {
   const user = await prisma.user.findUnique({
     where: {
       email: payload.email,
@@ -96,6 +97,12 @@ export const loginUser = async (
   return {
     accessToken,
     refreshToken,
+    user: {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+    },
   };
 };
 
