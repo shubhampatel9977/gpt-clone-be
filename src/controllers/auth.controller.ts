@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 
+import { AuthenticatedRequest } from "@app-types/request.types";
 import {
   registerSchema,
   loginSchema,
@@ -174,10 +175,10 @@ export const userInfo = async (
   res: Response
 ) => {
   try {
-    const user =
-      await getCurrentUser(
-        req.user!.userId
-      );
+
+    const authUser = (req as AuthenticatedRequest).user;
+
+    const user = await getCurrentUser(authUser.userId);
 
     return apiSuccess(
       res,
