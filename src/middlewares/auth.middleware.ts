@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 
+import { AuthenticatedRequest } from "@app-types/request.types";
 import { apiError } from "@utils/apiResponse";
 import { verifyAccessToken } from "@utils/jwt";
 
@@ -34,7 +35,9 @@ export const authorize =
         );
       }
 
-      req.user = decoded;
+      (req as AuthenticatedRequest).user = decoded;
+
+      // req.user = decoded;
 
       next();
     } catch {
