@@ -51,4 +51,12 @@ npx prisma migrate dev --name init_auth
 npx prisma migrate status
 
 
+Steps ->
+
+npx prisma format
+
+npx prisma generate
+
+npx prisma db push
+
 
