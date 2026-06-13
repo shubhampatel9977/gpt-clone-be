@@ -1,9 +1,9 @@
 import express from "express";
-import cors from "cors";
 import cookieParser from "cookie-parser";
 
 import { configureCors } from "@config/cors";
 import authRoutes from "@routes/auth.routes";
+import modelRoutes from "@modules/ai-model/model.routes";
 
 const app = express();
 
@@ -20,5 +20,7 @@ app.get("/", (_, res) => {
 });
 
 app.use("/api", authRoutes);
+
+app.use("/api/models", modelRoutes);
 
 export default app;

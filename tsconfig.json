@@ -19,7 +19,8 @@
       "@middlewares/*": ["middlewares/*"],
       "@utils/*": ["utils/*"],
       "@security/*": ["security/*"],
-      "@app-types/*": ["types/*"]
+      "@app-types/*": ["types/*"],
+      "@modules/*": ["modules/*"]
     },
 
     "types": ["node"],
