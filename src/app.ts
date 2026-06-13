@@ -5,6 +5,7 @@ import { configureCors } from "@config/cors";
 import authRoutes from "@routes/auth.routes";
 import modelRoutes from "@modules/ai-model/model.routes";
 import projectRoutes from "@modules/project/project.routes";
+import conversationRoutes from "@modules/conversation/conversation.routes";
 
 const app = express();
 
@@ -25,5 +26,7 @@ app.use("/api", authRoutes);
 app.use("/api/models", modelRoutes);
 
 app.use("/api/projects", projectRoutes);
+
+app.use("/api/conversations", conversationRoutes);
 
 export default app;
