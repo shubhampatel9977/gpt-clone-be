@@ -84,6 +84,8 @@ model Conversation {
 
   title String @default("New Chat")
 
+  isTemporary Boolean @default(false)
+
   userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
