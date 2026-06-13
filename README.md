@@ -2,41 +2,30 @@
 
 src
 │
+├── modules
+│   │
+│   ├── auth
+│   │   ├── auth.controller.ts
+│   │   ├── auth.service.ts
+│   │   ├── auth.routes.ts
+│   │   └── auth.validation.ts
+│   │
+│   ├── ai-model
+│   │   ├── model.controller.ts
+│   │   ├── model.service.ts
+│   │   ├── model.routes.ts
+│   │   ├── model.validation.ts
+│   │   └── model.types.ts
+│   │
+│   ├── project
+│   ├── conversation
+│   └── message
+│
 ├── config
-│   ├── env.ts
-│   ├── cors.ts
-│   └── prisma.ts
-│
-├── controllers
-│   ├── ai.controller.ts
-│   └── auth.controller.ts
-│
-├── services
-│   ├── openrouter.service.ts
-│   └── auth.service.ts
-│
-├── routes
-│   ├── ai.routes.ts
-│   └── auth.routes.ts
-│
 ├── middlewares
-│   ├── auth.middleware.ts
-│   ├── rateLimiter.ts
-│   └── error.middleware.ts
-│
+├── security
 ├── utils
-│   ├── apiResponse.ts
-│   ├── jwt.ts
-│   └── cookies.ts
-│
-├── validators
-│   ├── auth.validator.ts
-│   └── ai.validator.ts
-│
 ├── types
-│   ├── auth.types.ts
-│   └── common.types.ts
-│
 ├── app.ts
 └── server.ts
 
@@ -50,5 +39,13 @@ npx prisma migrate dev --name init_auth
 
 npx prisma migrate status
 
+
+Steps ->
+
+npx prisma format
+
+npx prisma generate
+
+npx prisma db push
 
 
