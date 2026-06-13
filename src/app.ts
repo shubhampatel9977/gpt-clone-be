@@ -7,6 +7,7 @@ import modelRoutes from "@modules/ai-model/model.routes";
 import projectRoutes from "@modules/project/project.routes";
 import conversationRoutes from "@modules/conversation/conversation.routes";
 import messageRoutes from "@modules/message/message.routes";
+import chatRoutes from "@modules/chat/chat.routes";
 
 const app = express();
 
@@ -31,5 +32,7 @@ app.use("/api/projects", projectRoutes);
 app.use("/api/conversations", conversationRoutes);
 
 app.use("/api/conversations", messageRoutes);
+
+app.use("/api/chat", chatRoutes);
 
 export default app;
