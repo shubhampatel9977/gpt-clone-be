@@ -1,13 +1,13 @@
 import { Router } from "express";
 
+import { authorize } from "@middlewares/auth.middleware";
 import {
   register,
   login,
   logout,
   refreshToken,
   userInfo
-} from "@controllers/auth.controller";
-import { authorize } from "@middlewares/auth.middleware";
+} from "./auth.controller";
 
 const router = Router();
 
