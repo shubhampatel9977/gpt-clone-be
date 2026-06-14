@@ -4,7 +4,7 @@ import { AuthenticatedRequest } from "@app-types/request.types";
 import {
   registerSchema,
   loginSchema,
-} from "@validators/auth.validator";
+} from "./auth.validation";
 
 import {
   registerUser,
@@ -12,7 +12,7 @@ import {
   logoutUser,
   refreshUserToken,
   getCurrentUser
-} from "@services/auth.service";
+} from "./auth.service";
 
 import {
   setAccessTokenCookie,
