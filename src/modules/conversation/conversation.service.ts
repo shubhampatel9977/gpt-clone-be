@@ -3,6 +3,7 @@ import { prisma } from "@config/prisma";
 import {
   CreateConversationInput,
 } from "./conversation.types";
+import { OPENROUTER_VALUES } from "@utils/commonConstants";
 
 export const createConversation = async (
   userId: string,
@@ -40,7 +41,7 @@ export const createConversation = async (
 
   return prisma.conversation.create({
     data: {
-      title: "New Chat",
+      title: OPENROUTER_VALUES.CONVERSATION_DEFAULT_TITLE,
       userId,
       projectId: payload.projectId,
       modelId: payload.modelId,
