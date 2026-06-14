@@ -7,7 +7,7 @@ import {
   AuthTokens,
   JwtPayload,
   LoginResponse,
-} from "@app-types/auth.types";
+} from "./auth.types";
 
 import {
   hashPassword,
