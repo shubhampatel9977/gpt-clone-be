@@ -1,5 +1,5 @@
 import { Request } from "express";
-import { JwtPayload } from "./auth.types";
+import { JwtPayload } from "@app-types/common.types";
 
 export type AuthenticatedRequest =
   Request & {

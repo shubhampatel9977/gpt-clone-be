@@ -1,23 +1,22 @@
 import { prisma } from "@config/prisma";
 import { verifyRefreshToken } from "@utils/jwt";
-
-import {
-  RegisterInput,
-  LoginInput,
-  AuthTokens,
-  JwtPayload,
-  LoginResponse,
-} from "./auth.types";
-
 import {
   hashPassword,
   comparePassword,
 } from "@security/password";
-
 import {
   generateAccessToken,
   generateRefreshToken,
 } from "@utils/jwt";
+import { JwtPayload } from "@app-types/common.types";
+import {
+  RegisterInput,
+  LoginInput,
+  AuthTokens,
+  LoginResponse,
+} from "./auth.types";
+
+
 
 export const registerUser = async (
   payload: RegisterInput
