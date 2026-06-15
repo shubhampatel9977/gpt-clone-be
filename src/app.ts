@@ -2,7 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 
 import { configureCors } from "@config/cors";
-import authRoutes from "@routes/auth.routes";
+import authRoutes from "@modules/auth/auth.routes";
 import modelRoutes from "@modules/ai-model/model.routes";
 import projectRoutes from "@modules/project/project.routes";
 import conversationRoutes from "@modules/conversation/conversation.routes";

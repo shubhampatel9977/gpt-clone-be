@@ -9,14 +9,6 @@ export interface LoginInput {
   password: string;
 }
 
-export type UserRole = "USER" | "ADMIN";
-
-export interface JwtPayload {
-  userId: string;
-  email: string;
-  role: UserRole;
-}
-
 export interface AuthUser {
   id: string;
   name: string;
