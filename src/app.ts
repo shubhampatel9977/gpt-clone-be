@@ -1,3 +1,4 @@
+import dotenv from "dotenv";
 import express from "express";
 import cookieParser from "cookie-parser";
 
@@ -8,6 +9,8 @@ import projectRoutes from "@modules/project/project.routes";
 import conversationRoutes from "@modules/conversation/conversation.routes";
 import messageRoutes from "@modules/message/message.routes";
 import chatRoutes from "@modules/chat/chat.routes";
+
+dotenv.config();
 
 const app = express();
 
