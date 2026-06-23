@@ -6,7 +6,8 @@ import {
   login,
   logout,
   refreshToken,
-  userInfo
+  userInfo,
+  googleLoginController
 } from "./auth.controller";
 
 const router = Router();
@@ -14,6 +15,8 @@ const router = Router();
 router.post("/register", register);
 
 router.post("/login", login);
+
+router.post("/google", googleLoginController);
 
 router.post("/logout", logout);
 

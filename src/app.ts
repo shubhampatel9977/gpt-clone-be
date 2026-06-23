@@ -2,6 +2,8 @@ import dotenv from "dotenv";
 import express from "express";
 import cookieParser from "cookie-parser";
 
+dotenv.config();
+
 import { configureCors } from "@config/cors";
 import authRoutes from "@modules/auth/auth.routes";
 import modelRoutes from "@modules/ai-model/model.routes";

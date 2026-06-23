@@ -72,6 +72,7 @@ export const getActiveModels =
         label: true,
         provider: true,
         isDefault: true,
+        description: true,
       },
     });
   };

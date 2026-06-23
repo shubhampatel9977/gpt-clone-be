@@ -26,3 +26,7 @@ export interface LoginResponse {
   refreshToken: string;
   user: AuthUser;
 }
+
+export interface GoogleLoginInput {
+  token: string;
+}
