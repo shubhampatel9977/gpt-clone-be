@@ -11,7 +11,8 @@ import {
   loginUser,
   logoutUser,
   refreshUserToken,
-  getCurrentUser
+  getCurrentUser,
+  googleLogin
 } from "./auth.service";
 
 import {
@@ -96,6 +97,51 @@ export const login = async (
     );
   }
 };
+
+export const googleLoginController =
+  async (
+    req: Request,
+    res: Response
+  ) => {
+
+    try {
+
+      const {
+        accessToken,
+        refreshToken,
+        user,
+      } = await googleLogin(
+        req.body.token
+      );
+
+      setAccessTokenCookie(
+        res,
+        accessToken
+      );
+
+      setRefreshTokenCookie(
+        res,
+        refreshToken
+      );
+
+      return apiSuccess(
+        res,
+        200,
+        "Google login successful",
+        user
+      );
+
+    } catch (error) {
+
+      return apiError(
+        res,
+        400,
+        error instanceof Error
+          ? error.message
+          : "Google login failed"
+      );
+    }
+  };
 
 export const logout = async (
   req: Request,
