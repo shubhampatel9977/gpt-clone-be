@@ -5,11 +5,22 @@ export const getConversationMessages =
     conversationId: string,
     userId: string
   ) => {
+
     const conversation =
       await prisma.conversation.findFirst({
         where: {
           id: conversationId,
           userId,
+        },
+
+        include: {
+          model: {
+            select: {
+              id: true,
+              label: true,
+              provider: true,
+            },
+          },
         },
       });
 
@@ -19,14 +30,20 @@ export const getConversationMessages =
       );
     }
 
-    return prisma.message.findMany({
-      where: {
-        conversationId,
-      },
+    const messages =
+      await prisma.message.findMany({
+        where: {
+          conversationId,
+        },
 
-      orderBy: {
-        createdAt: "asc",
-      },
-    });
+        orderBy: {
+          createdAt: "asc",
+        },
+      });
+
+    return {
+      conversation,
+      messages,
+    };
   };
   
