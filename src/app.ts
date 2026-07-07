@@ -11,6 +11,7 @@ import projectRoutes from "@modules/project/project.routes";
 import conversationRoutes from "@modules/conversation/conversation.routes";
 import messageRoutes from "@modules/message/message.routes";
 import chatRoutes from "@modules/chat/chat.routes";
+import accountRoutes from "@modules/account/account.routes";
 
 dotenv.config();
 
@@ -39,5 +40,7 @@ app.use("/api/conversations", conversationRoutes);
 app.use("/api/conversations", messageRoutes);
 
 app.use("/api/chat", chatRoutes);
+
+app.use("/api/account", accountRoutes);
 
 export default app;
