@@ -12,14 +12,11 @@
     "paths": {
       "@/*": ["*"],
       "@config/*": ["config/*"],
-      "@routes/*": ["routes/*"],
-      "@validators/*": ["validators/*"],
-      "@controllers/*": ["controllers/*"],
-      "@services/*": ["services/*"],
       "@middlewares/*": ["middlewares/*"],
-      "@utils/*": ["utils/*"],
+      "@modules/*": ["modules/*"],
       "@security/*": ["security/*"],
-      "@app-types/*": ["types/*"]
+      "@app-types/*": ["types/*"],
+      "@utils/*": ["utils/*"],
     },
 
     "types": ["node"],

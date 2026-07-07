@@ -1,0 +1,616 @@
+{
+  "info": {
+    "_postman_id": "5fa54e8f-1284-42fb-853c-2bc19af841ba",
+    "name": "gpt-clone",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47598296",
+    "_collection_link": "https://go.postman.co/collection/47598296-5fa54e8f-1284-42fb-853c-2bc19af841ba?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Shubham_admin\",\r\n  \"email\": \"shubhamAdmin@test.com\",\r\n  \"password\": \"Shubh@123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{G-CloneURL}}/api/register",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Log In",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"shubham@test.com\",\r\n  \"password\": \"Shubh@123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{G-CloneURL}}/api/login",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Log Out",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{G-CloneURL}}/api/logout",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{G-CloneURL}}/api/refresh-token",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "refresh-token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "User Info",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{G-CloneURL}}/api/me",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Modal",
+      "item": [
+        {
+          "name": "Create Model",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"label\": \"Gemini 2.5 Flash\",\r\n  \"value\": \"google/gemini-2.5-flash\",\r\n  \"provider\": \"Google\",\r\n  \"description\": \"Fast and cost effective\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{G-CloneURL}}/api/models",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "models"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Active Models",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{G-CloneURL}}/api/models",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "models"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Models (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{G-CloneURL}}/api/models/admin",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "models",
+                "admin"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Model",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"isActive\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{G-CloneURL}}/api/models/cmqcaj89a00003ktobqh7f857",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "models",
+                "cmqcaj89a00003ktobqh7f857"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Soft Delete Model",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"isActive\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{G-CloneURL}}/api/models/cmqcaj89a00003ktobqh7f857",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "models",
+                "cmqcaj89a00003ktobqh7f857"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Project",
+      "item": [
+        {
+          "name": "Create Project",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"React + AI\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{G-CloneURL}}/api/projects",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "projects"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Projects",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{G-CloneURL}}/api/projects",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "projects"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Project",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{G-CloneURL}}/api/projects/cmqcgi43500033kokofo1iqhj",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "projects",
+                "cmqcgi43500033kokofo1iqhj"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Project",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"React + AI Advanced\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{G-CloneURL}}/api/projects/cmqcgi43500033kokofo1iqhj",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "projects",
+                "cmqcgi43500033kokofo1iqhj"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Project",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"isActive\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{G-CloneURL}}/api/projects/cmqcgi43500033kokofo1iqhj",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "projects",
+                "cmqcgi43500033kokofo1iqhj"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Conversation (Chat)",
+      "item": [
+        {
+          "name": "Create Standalone Chat",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"modelId\": \"cmqcatc6f00033kto7mjx1koj\"\r\n//   \"isTemporary\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{G-CloneURL}}/api/conversations",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "conversations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Project Chat",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"modelId\": \"YOUR_MODEL_ID\",\r\n  \"projectId\": \"YOUR_PROJECT_ID\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{G-CloneURL}}/api/conversations",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "conversations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Standalone Chats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{G-CloneURL}}/api/conversations",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "conversations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Project Chats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{G-CloneURL}}/api/conversations/project/{projectId}",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "conversations",
+                "project",
+                "{projectId}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Chat",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{G-CloneURL}}/api/conversations/{conversationId}",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "conversations",
+                "{conversationId}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Chat",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"isActive\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{G-CloneURL}}/api/conversations/{conversationId}",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "conversations",
+                "{conversationId}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Message",
+      "item": [
+        {
+          "name": "Conversation Messages",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{G-CloneURL}}/api/conversations/cmqcpdzqi00033k0gimetr52w/messages",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "conversations",
+                "cmqcpdzqi00033k0gimetr52w",
+                "messages"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Chat (User Input)",
+      "item": [
+        {
+          "name": "Send Chat",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"conversationId\": \"cmqcpdzqi00033k0gimetr52w\",\r\n  \"message\": \"What is react?\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{G-CloneURL}}/api/chat/send",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "chat",
+                "send"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Stream",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"conversationId\": \"cmqcpdzqi00033k0gimetr52w\",\r\n  \"message\": \"What is Next js?\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{G-CloneURL}}/api/chat/stream",
+              "host": [
+                "{{G-CloneURL}}"
+              ],
+              "path": [
+                "api",
+                "chat",
+                "stream"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

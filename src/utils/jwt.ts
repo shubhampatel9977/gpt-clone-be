@@ -1,15 +1,14 @@
 import jwt from "jsonwebtoken";
-import { JwtPayload } from "@app-types/auth.types";
+import { JwtPayload } from "@app-types/common.types";
 
-const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET!;
-const refreshTokenSecret = process.env.REFRESH_TOKEN_SECRET!;
-
-const accessTokenExpiry = process.env.ACCESS_TOKEN_EXPIRY!;
-const refreshTokenExpiry = process.env.REFRESH_TOKEN_EXPIRY!;
 
 export const generateAccessToken = (
   payload: JwtPayload
 ): string => {
+
+  const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET!;
+  const accessTokenExpiry = process.env.ACCESS_TOKEN_EXPIRY!;
+
   return jwt.sign(
     payload,
     accessTokenSecret,
@@ -22,6 +21,10 @@ export const generateAccessToken = (
 export const generateRefreshToken = (
   payload: JwtPayload
 ): string => {
+
+  const refreshTokenSecret = process.env.REFRESH_TOKEN_SECRET!;
+  const refreshTokenExpiry = process.env.REFRESH_TOKEN_EXPIRY!;
+
   return jwt.sign(
     payload,
     refreshTokenSecret,
@@ -34,6 +37,9 @@ export const generateRefreshToken = (
 export const verifyAccessToken = (
   token: string
 ): JwtPayload => {
+
+  const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET!;
+
   return jwt.verify(
     token,
     accessTokenSecret
@@ -43,6 +49,9 @@ export const verifyAccessToken = (
 export const verifyRefreshToken = (
   token: string
 ): JwtPayload => {
+
+  const refreshTokenSecret = process.env.REFRESH_TOKEN_SECRET!;
+
   return jwt.verify(
     token,
     refreshTokenSecret

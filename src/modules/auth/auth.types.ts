@@ -9,14 +9,6 @@ export interface LoginInput {
   password: string;
 }
 
-export type UserRole = "USER" | "ADMIN";
-
-export interface JwtPayload {
-  userId: string;
-  email: string;
-  role: UserRole;
-}
-
 export interface AuthUser {
   id: string;
   name: string;
@@ -33,4 +25,8 @@ export interface LoginResponse {
   accessToken: string;
   refreshToken: string;
   user: AuthUser;
+}
+
+export interface GoogleLoginInput {
+  token: string;
 }
