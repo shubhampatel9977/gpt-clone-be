@@ -31,21 +31,21 @@ src
 
 
 
-Prisma -> 
 
-npx prisma generate
+npm run type-check -> Compile nahi karega. Sirf errors batayega.
 
-npx prisma migrate dev --name init_auth
+npm run prisma:generate -> Generate Client
 
-npx prisma migrate status
+npm run prisma:push -> Development Database Sync
+
+npm run prisma:migrate -> Create Migration Development
+
+npm run prisma:deploy -> Production Migration Render
+
+npm run prisma:studio -> Database GUI (localhost:5555)
 
 
-Steps ->
 
-npx prisma format
 
-npx prisma generate
-
-npx prisma db push
 
 

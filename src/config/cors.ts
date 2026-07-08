@@ -1,9 +1,10 @@
 import cors, { CorsOptions } from "cors";
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "http://localhost:5174",
-  "http://localhost:5175",
+const allowedOrigins: string[] = [
+  // TODO (Deploy): Uncomment when server using local 
+  // "http://localhost:5173",
+  // "http://localhost:5174",
+  // "http://localhost:5175",
 ];
 
 if (process.env.CLIENT_URL) {

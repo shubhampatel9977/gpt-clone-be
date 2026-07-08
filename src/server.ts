@@ -6,13 +6,13 @@ const startServer = async () => {
   try {
     await prisma.$connect();
 
-    console.log("✅ PostgreSQL Connected");
+    console.log("PostgreSQL Connected");
 
     app.listen(env.PORT, () => {
-      console.log(`🚀 Server running on port ${env.PORT}`);
+      console.log(`Server running on port ${env.PORT}`);
     });
   } catch (error) {
-    console.error("❌ Database Connection Failed", error);
+    console.error("Database Connection Failed", error);
     process.exit(1);
   }
 };

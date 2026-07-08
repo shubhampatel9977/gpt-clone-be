@@ -1,10 +1,15 @@
 import dotenv from "dotenv";
-import express from "express";
-import cookieParser from "cookie-parser";
-
 dotenv.config();
 
+import express from "express";
+import helmet from "helmet";
+import compression from "compression";
+import morgan from "morgan";
+import cookieParser from "cookie-parser";
+
+
 import { configureCors } from "@config/cors";
+
 import authRoutes from "@modules/auth/auth.routes";
 import modelRoutes from "@modules/ai-model/model.routes";
 import projectRoutes from "@modules/project/project.routes";
@@ -13,17 +18,27 @@ import messageRoutes from "@modules/message/message.routes";
 import chatRoutes from "@modules/chat/chat.routes";
 import accountRoutes from "@modules/account/account.routes";
 
-dotenv.config();
-
 const app = express();
+
+// Security Headers 
+app.use(helmet());
+
+// Compress Responses
+app.use(compression());
+
+// HTTP Request Logger (Development Only)
+if (process.env.NODE_ENV !== "production") {
+  app.use(morgan("dev"));
+}
 
 // Apply CORS middleware
 app.use(configureCors());
 
+// Parse JSON Body
+app.use(express.json());
+
 // Use cookie-parser to parse cookies
 app.use(cookieParser());
-
-app.use(express.json());
 
 app.get("/", (_, res) => {
   res.status(200).send("Server is running...");
