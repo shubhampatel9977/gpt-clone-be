@@ -20,7 +20,7 @@ app.use(helmet());
 app.use(compression());
 
 // HTTP Request Logger (Development Only)
-if (process.env.NODE_ENV !== "production") {
+if (process.env.APP_ENV !== "production") {
   app.use(morgan("dev"));
 }
 
