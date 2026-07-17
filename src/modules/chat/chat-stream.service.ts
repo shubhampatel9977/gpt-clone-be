@@ -18,10 +18,9 @@ export const sendMessageStream = async (
 
       // SSE Headers
       res.setHeader("Content-Type", "text/event-stream");
-
       res.setHeader("Cache-Control", "no-cache");
-
       res.setHeader("Connection", "keep-alive");
+      res.setHeader("X-Accel-Buffering", "no");
 
       res.flushHeaders();
 
@@ -64,13 +63,10 @@ export const sendMessageStream = async (
         content: message.content,
       }));
 
-      const requestStart = Date.now();
-
-      console.log("Request started");
-
       // 5. OpenRouter Stream
       const stream = await openrouter.chat.completions.create({
-        model: conversation.model.value,
+        // model: conversation.model.value,
+        model: "openrouter/free",
         messages,
         max_tokens: OPENROUTER_VALUES.MAX_TOKEN,
         stream: true,
@@ -83,21 +79,8 @@ export const sendMessageStream = async (
       let completionTokens = 0;
       let totalTokens = 0;
 
-      console.log(
-        "Stream object received after",
-        Date.now() - requestStart,
-        "ms"
-      );
-
-
       // 6. Stream Chunks
       for await ( const chunk of stream) {
-
-        console.log(
-          "First/Next chunk at",
-          Date.now() - requestStart,
-          "ms"
-        );
   
         const content = chunk.choices[0]?.delta?.content ?? "";
       
