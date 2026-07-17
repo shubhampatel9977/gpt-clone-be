@@ -6,8 +6,7 @@ import { sendMessageSchema } from "./chat.validation";
 
 import { sendMessageStream } from "./chat-stream.service";
 
-export const sendMessageStreamController =
-  async (
+export const sendMessageStreamController = async (
     req: Request,
     res: Response
   ) => {
