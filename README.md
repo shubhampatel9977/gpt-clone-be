@@ -1,51 +1,85 @@
-# gpt-clone-be
+# Multimodal AI Backend
 
-src
-│
-├── modules
-│   │
-│   ├── auth
-│   │   ├── auth.controller.ts
-│   │   ├── auth.service.ts
-│   │   ├── auth.routes.ts
-│   │   └── auth.validation.ts
-│   │
-│   ├── ai-model
-│   │   ├── model.controller.ts
-│   │   ├── model.service.ts
-│   │   ├── model.routes.ts
-│   │   ├── model.validation.ts
-│   │   └── model.types.ts
-│   │
-│   ├── project
-│   ├── conversation
-│   └── message
-│
+> Production-ready backend for an AI-powered chat application
+
+## Overview
+
+Multimodal AI Backend is a Node.js + Express + TypeScript backend using
+OpenRouter, PostgreSQL (Supabase), Prisma ORM, JWT Authentication and
+Server-Sent Events (SSE).
+
+### Links
+
+-   **Frontend Live:** https://multimodal-ai-chi.vercel.app
+-   **Frontend Repo:** https://github.com/shubhampatel9977/multimodal-ai-fe.git
+-   **Backend Repo:** https://github.com/shubhampatel9977/multimodal-ai-be.git
+-   **Backend Live:** https://multimodal-ai-be.onrender.com
+
+## Tech Stack
+
+-   Node.js 22
+-   Express
+-   TypeScript
+-   Prisma ORM
+-   PostgreSQL (Supabase)
+-   OpenRouter
+-   JWT
+-   Zod
+-   Helmet
+-   Compression
+-   Morgan
+-   Cookie Parser
+-   SSE
+
+## Features
+
+-   Authentication
+-   Google Login
+-   JWT + Refresh Token
+-   AI Models
+-   Projects
+-   Conversations
+-   Messages
+-   Streaming Chat
+-   Temporary Chat
+-   AI Title Generation
+-   Token Tracking
+
+## Folder Structure
+
+``` text
+src/
 ├── config
 ├── middlewares
+├── modules
+├── routes
 ├── security
-├── utils
 ├── types
+├── utils
 ├── app.ts
 └── server.ts
+```
 
+## Setup
 
+``` bash
+git clone https://github.com/shubhampatel9977/multimodal-ai-fe.git
+cd multimodal-ai-fe
+npm install
+```
 
+Rename `.env.example` to `.env`, update environment variables, then:
 
-npm run type-check -> Compile nahi karega. Sirf errors batayega.
+``` bash
+npm run dev
+```
 
-npm run prisma:generate -> Generate Client
+## License
 
-npm run prisma:push -> Development Database Sync
+Public repository. No license specified.
 
-npm run prisma:migrate -> Create Migration Development
+## Author
 
-npm run prisma:deploy -> Production Migration Render
+Shubham Patel
 
-npm run prisma:studio -> Database GUI (localhost:5555)
-
-
-
-
-
-
+https://www.linkedin.com/in/shubhampatel9977
