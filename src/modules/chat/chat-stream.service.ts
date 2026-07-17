@@ -65,8 +65,7 @@ export const sendMessageStream = async (
 
       // 5. OpenRouter Stream
       const stream = await openrouter.chat.completions.create({
-        // model: conversation.model.value,
-        model: "openrouter/free",
+        model: conversation.model.value,
         messages,
         max_tokens: OPENROUTER_VALUES.MAX_TOKEN,
         stream: true,
