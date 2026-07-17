@@ -9,14 +9,7 @@ import cookieParser from "cookie-parser";
 
 
 import { configureCors } from "@config/cors";
-
-import authRoutes from "@modules/auth/auth.routes";
-import modelRoutes from "@modules/ai-model/model.routes";
-import projectRoutes from "@modules/project/project.routes";
-import conversationRoutes from "@modules/conversation/conversation.routes";
-import messageRoutes from "@modules/message/message.routes";
-import chatRoutes from "@modules/chat/chat.routes";
-import accountRoutes from "@modules/account/account.routes";
+import { registerRoutes } from "./routes";
 
 const app = express();
 
@@ -44,18 +37,7 @@ app.get("/", (_, res) => {
   res.status(200).send("Server is running...");
 });
 
-app.use("/api", authRoutes);
-
-app.use("/api/models", modelRoutes);
-
-app.use("/api/projects", projectRoutes);
-
-app.use("/api/conversations", conversationRoutes);
-
-app.use("/api/conversations", messageRoutes);
-
-app.use("/api/chat", chatRoutes);
-
-app.use("/api/account", accountRoutes);
+// Add application routes
+registerRoutes(app);
 
 export default app;

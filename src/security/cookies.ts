@@ -1,14 +1,17 @@
-import { Response } from "express";
+import { Response, CookieOptions } from "express";
 
-const isProduction =
-  process.env.NODE_ENV === "production";
+const isProduction = process.env.NODE_ENV === "production";
 
-const cookieOptions = {
+const cookieOptions: CookieOptions = {
   httpOnly: true,
+
+  /** HTTPS only in production */
   secure: isProduction,
-  sameSite: isProduction
-    ? ("none" as const)
-    : ("lax" as const),
+
+  /** Cross-site cookies */
+  sameSite: isProduction ? "none" : "lax",
+
+  /** Available for entire API */
   path: "/",
 };
 
@@ -18,7 +21,7 @@ export const setAccessTokenCookie = (
 ): void => {
   res.cookie("accessToken", token, {
     ...cookieOptions,
-    maxAge: 15 * 60 * 1000,
+    maxAge: 15 * 60 * 1000, // 15 minutes
   });
 };
 
@@ -28,18 +31,13 @@ export const setRefreshTokenCookie = (
 ): void => {
   res.cookie("refreshToken", token, {
     ...cookieOptions,
-    maxAge: 7 * 24 * 60 * 60 * 1000,
+    maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
   });
 };
 
 export const clearAuthCookies = (
   res: Response
 ): void => {
-  res.clearCookie("accessToken", {
-    ...cookieOptions,
-  });
-
-  res.clearCookie("refreshToken", {
-    ...cookieOptions,
-  });
+  res.clearCookie("accessToken", cookieOptions);
+  res.clearCookie("refreshToken", cookieOptions);
 };
